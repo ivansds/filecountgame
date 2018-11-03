@@ -17,7 +17,7 @@ answer=""
 
 while [ "$answer" != "$files_in_dir" ]
 do
-  echo "Guess how many files are  in this directory?"
+  echo "How many files are in the current directory, can you guess?"
   read answer
 
   if [ -z "$answer" ]
@@ -35,15 +35,15 @@ do
   
   if [ $answer -lt $files_in_dir ]
   then
-    echo "Wrong, it's greater than $answer"
+    echo "You guessed too low, please, try to guess again $answer"
   fi
   if [ $answer -gt $files_in_dir ]
   then
-    echo "Wrong, it's less than $answer"
+    echo "You guessed too high, please, try to guess again, $answer"
   fi
   if [ $answer -eq $files_in_dir ]
   then
-    echo "YES, you are correct!!!"
+    echo "Correct, congratulations!!!"
     sleep 1
   fi
 done
